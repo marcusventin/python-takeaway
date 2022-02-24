@@ -5,5 +5,5 @@ class Menu():
     def add(self, dish):
         self.dishes.append(dish)
     
-    def view(self):
-        return [f"{dish.name} .... £{dish.price}\n" for dish in self.dishes]
+    def list(self):
+        print([f"{dish.name} .... £{dish.price}\n" for dish in self.dishes])

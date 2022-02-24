@@ -7,5 +7,13 @@ class Order():
     def add(self, dish):
         self.dishes.append(dish)
     
-    def view(self):
-        return [f"{dish.name} .... £{dish.price}\n" for dish in self.dishes]
+    def summary(self):
+        self.list()
+        self.total()
+    
+    def list(self):
+        print([f"{dish.name} .... £{dish.price}" for dish in self.dishes])
+    
+    def total(self):
+        total = sum([dish.price for dish in self.dishes])
+        print("Total: £", total)
