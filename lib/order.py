@@ -1,4 +1,6 @@
-class Menu():
+
+
+class Order():
     def __init__(self):
         self.dishes = []
     
