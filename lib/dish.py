@@ -1,3 +1,4 @@
 class Dish():
-    def __init__(self, price):
+    def __init__(self, name, price):
+        self.name = name
         self.price = price
