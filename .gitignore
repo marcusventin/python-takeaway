@@ -1,0 +1,6 @@
+.pytest_cache
+archived_logs
+latest_logs
+
+lib/__pycache__
+tests/__pycache__

@@ -33,9 +33,10 @@ class TestOrder():
         order.dishes = [dish1, dish2]
 
         order.list()
-        out = str(capsys.readouterr())
+        out, err = capsys.readouterr()
+        out = str(out)
 
-        assert "Apple" in out
+        assert "Appe" in out
         assert str(rand1) in out
         assert "Banana" in out
         assert str(rand2) in out
@@ -54,5 +55,6 @@ class TestOrder():
         order.dishes = [dish1, dish2]
         order.total()
 
-        out = str(capsys.readouterr())
+        out, err = capsys.readouterr()
+        out = str(out)
         assert str(rand1 + rand2) in out
