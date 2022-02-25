@@ -36,7 +36,7 @@ class TestOrder():
         out, err = capsys.readouterr()
         out = str(out)
 
-        assert "Appe" in out
+        assert "Apple" in out
         assert str(rand1) in out
         assert "Banana" in out
         assert str(rand2) in out
