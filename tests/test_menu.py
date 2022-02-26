@@ -1,20 +1,20 @@
 from unittest.mock import MagicMock
 from random import randint
 
-from lib.food_list_mixin import FoodListMixin
+from lib.menu import Menu
 
-class TestFoodListMixin():
+class TestMenu():
     def test_add_adds_dish_to_dishes(self):
         dish1 = MagicMock()
         dish2 = MagicMock()
 
-        subject = FoodListMixin()
-        subject.add(dish1)
-        assert dish1 in subject.dishes
+        menu = Menu()
+        menu.add(dish1)
+        assert dish1 in menu.dishes
 
-        subject.add(dish2)
-        assert dish1 in subject.dishes
-        assert dish2 in subject.dishes
+        menu.add(dish2)
+        assert dish1 in menu.dishes
+        assert dish2 in menu.dishes
 
     def test_list_shows_all_dishes_and_prices(self, capsys):
         rand1 = randint(1, 100)
@@ -28,10 +28,10 @@ class TestFoodListMixin():
         dish2.name = "Banana"
         dish2.price = rand2
         
-        subject = FoodListMixin()
-        subject.dishes = [dish1, dish2]
+        menu = Menu()
+        menu.dishes = [dish1, dish2]
 
-        subject.list()
+        menu.list()
 
         out = str(capsys.readouterr())
         assert "Apple" in out

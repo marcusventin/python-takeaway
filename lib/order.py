@@ -1,7 +1,7 @@
-from lib.food_list_mixin import FoodListMixin
+from lib.menu import Menu
 from lib.send_sms import Sms
 
-class Order(FoodListMixin):
+class Order(Menu):
     def __init__(self):
         super().__init__()
         self.sms = Sms()
